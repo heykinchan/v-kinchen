@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { email } from '@config';
 import { Side } from '@components';
+import { linkedIn } from '../config';
 
 const StyledLinkWrapper = styled.div`
   display: flex;
@@ -38,7 +38,7 @@ const StyledLinkWrapper = styled.div`
 const Email = ({ isHome }) => (
   <Side isHome={isHome} orientation="right">
     <StyledLinkWrapper>
-      <a href={`mailto:${email}`}>{email}</a>
+      <a href={linkedIn}>Connect on LinkedIn</a>
     </StyledLinkWrapper>
   </Side>
 );
