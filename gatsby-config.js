@@ -5,9 +5,9 @@ module.exports = {
     title: 'Kin Chen',
     description:
       'Kin Chen am a full-stack developer proficient in modern frameworks e.g. React, Spring Boot, Node.js, PostgreSQL, RESTful APIs, and cloud platforms such AWS and Azure',
-    siteUrl: 'https://brittanychiang.com', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
-    twitterUsername: '@bchiang7',
+    siteUrl: 'https://www.kinchen.dev/', // No trailing slash allowed!
+    image: '/screencap.png', // Path to your image you placed in the 'static' folder
+    twitterUsername: '@heykinchan',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -26,7 +26,7 @@ module.exports = {
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
         display: 'minimal-ui',
-        icon: 'src/images/kin_logo.png',
+        icon: 'src/images/kin_logo_1.png',
       },
     },
     `gatsby-plugin-offline`,

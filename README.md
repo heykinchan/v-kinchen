@@ -62,6 +62,6 @@
 
 ## Attribution
 
-<p>
-  Special thanks to <a href = "https://brittanychiang.com">Brittany Chiang </a> for developing a beautiful template and sharing with everyone in GitHub for building their personal website.
+<Special thanks to <a href = "https://brittanychiang.com">Brittany Chiang </a> for developing a beautiful template and sharing with everyone in GitHub for building their personal website.
+
 </p>
