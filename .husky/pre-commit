@@ -1,4 +1,8 @@
 #!/bin/sh
+export NVM_DIR="$HOME/.nvm"
+. "$NVM_DIR/nvm.sh"
+nvm use default >/dev/null
+
 . "$(dirname "$0")/_/husky.sh"
 
 npm run lint-staged
