@@ -175,8 +175,9 @@ const About = () => {
               src="../../images/profile_2.jpg"
               width={500}
               quality={95}
-              formats={['AUTO', 'WEBP', 'AVIF']}
+              formats={['auto', 'webp', 'avif']}
               alt="Headshot"
+              placeholder="blurred"
             />
           </div>
         </StyledPic>

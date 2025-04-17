@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
 
@@ -51,8 +50,6 @@ const TagTemplate = ({ pageContext, data, location }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title={`Tagged: #${tag}`} />
-
       <StyledTagsContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
@@ -105,7 +102,7 @@ export default TagTemplate;
 TagTemplate.propTypes = {
   pageContext: PropTypes.shape({
     tag: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       totalCount: PropTypes.number.isRequired,
@@ -114,20 +111,32 @@ TagTemplate.propTypes = {
           node: PropTypes.shape({
             frontmatter: PropTypes.shape({
               title: PropTypes.string.isRequired,
-            }),
-          }),
+              date: PropTypes.string.isRequired,
+              slug: PropTypes.string.isRequired,
+              description: PropTypes.string,
+              tags: PropTypes.arrayOf(PropTypes.string),
+            }).isRequired,
+          }).isRequired,
         }).isRequired,
       ),
-    }),
-  }),
-  location: PropTypes.object,
+    }).isRequired,
+  }).isRequired,
+  location: PropTypes.object.isRequired,
+};
+
+export const Head = ({ pageContext }) => <title>Tagged: #{pageContext.tag}</title>;
+
+Head.propTypes = {
+  pageContext: PropTypes.shape({
+    tag: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`
-  query($tag: String!) {
+  query ($tag: String!) {
     allMarkdownRemark(
       limit: 2000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount

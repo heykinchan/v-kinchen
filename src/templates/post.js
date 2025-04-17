@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { Layout } from '@components';
 
@@ -56,8 +55,6 @@ const PostTemplate = ({ data, location }) => {
 
   return (
     <Layout location={location}>
-      <Helmet title={title} />
-
       <StyledPostContainer>
         <span className="breadcrumb">
           <span className="arrow">&larr;</span>
@@ -94,12 +91,35 @@ const PostTemplate = ({ data, location }) => {
 export default PostTemplate;
 
 PostTemplate.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+        slug: PropTypes.string,
+        tags: PropTypes.arrayOf(PropTypes.string),
+        description: PropTypes.string,
+      }).isRequired,
+      html: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+  location: PropTypes.object.isRequired,
+};
+
+export const Head = ({ data }) => <title>{data.markdownRemark.frontmatter.title}</title>;
+
+Head.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     markdownRemark(frontmatter: { slug: { eq: $path } }) {
       html
       frontmatter {

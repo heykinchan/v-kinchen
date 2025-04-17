@@ -25,4 +25,11 @@ IndexPage.propTypes = {
   location: PropTypes.object.isRequired,
 };
 
+export const Head = () => (
+  <>
+    <title>Kin Chen | Homepage</title>
+    <meta name="description" content="Kin Chen's Homepage" />
+  </>
+);
+
 export default IndexPage;
