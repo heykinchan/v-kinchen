@@ -1,0 +1,13 @@
+{
+  "data": {
+    "site": {
+      "siteMetadata": {
+        "defaultTitle": "Kin Chen",
+        "defaultDescription": "Kin Chen am a full-stack developer proficient in modern frameworks e.g. React, Spring Boot, Node.js, PostgreSQL, RESTful APIs, and cloud platforms such AWS and Azure",
+        "siteUrl": "https://www.kinchen.dev",
+        "defaultImage": "/screencap.png",
+        "twitterUsername": "@heykinchan"
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "data": {
+    "educations": {
+      "edges": [
+        {
+          "node": {
+            "frontmatter": {
+              "title": "Master of Computer Science (Advanced Entry)",
+              "university": "The University of Sydney",
+              "shortUniversity": "USYD",
+              "location": "Sydney, Australia",
+              "range": "July 2023 - June 2025 (Expected)",
+              "url": "https://www.sydney.edu.au/"
+            },
+            "html": "<ul>\n<li>Grade: 83/100 (First-class Honors Range)</li>\n<li>Recognition: Academic Excellence Award 2024</li>\n<li>Major: Software Engineering</li>\n</ul>"
+          }
+        },
+        {
+          "node": {
+            "frontmatter": {
+              "title": "Bachelor of Science in Mathematics – Computer Science Track ",
+              "university": "The Hong Kong University of Science and Technology",
+              "shortUniversity": "HKUST",
+              "location": "Hong Kong",
+              "range": "September 2012 - January 2017",
+              "url": "https://hkust.edu.hk/"
+            },
+            "html": "<ul>\n<li>Honor: First-class Honors</li>\n<li>Recognition: Dean’s list; Admission Scholarship; Scholarship for Continuing Students</li>\n</ul>"
+          }
+        }
+      ]
+    }
+  }
+}
